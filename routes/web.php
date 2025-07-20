@@ -8,4 +8,8 @@ Route::get('/', function () {
 
 Route::get('/criar-conta', function () {
     return view('create-account');
+})->name('create-account');
+
+Route::get('/entrar', function () {
+    return view('login')->name('login');
 });
