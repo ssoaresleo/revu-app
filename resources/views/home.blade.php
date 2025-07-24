@@ -13,7 +13,7 @@
                     com recomendações personalizadas e avaliações de diferentes gêneros.
                 </p>
             </div>
-            <x-button linkto="criar-conta" variant="gradient" class="me-2 mb-2">Começar agora mesmo!</x-button>
+            <x-button linkto="create-account" variant="gradient" class="me-2 mb-2">Começar agora mesmo!</x-button>
         </div>
     </section>
 @endsection
