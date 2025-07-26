@@ -25,21 +25,21 @@
                 <div>
                     <label for="name" class="block mb-1 text-sm font-medium text-zinc-200">Nome</label>
                     <input type="text" name="name" id="name"
-                        class="bg-zinc-950 border border-default text-zinc-200 text-sm rounded-lg block w-full p-2.5"
+                        class="bg-zinc-950 border border-default text-zinc-200 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-0 focus:border-brand"
                         placeholder="Insira seu nome" required>
                 </div>
 
                 <div>
                     <label for="email" class="block mb-1 text-sm font-medium text-zinc-200">E-mail</label>
                     <input type="email" name="email" id="email"
-                        class="bg-zinc-950 border border-default text-zinc-200 text-sm rounded-lg block w-full p-2.5"
+                        class="bg-zinc-950 border border-default text-zinc-200 text-sm rounded-lg block outline-none focus:ring-0 focus:border-brand w-full p-2.5"
                         placeholder="Insira um E-mail" required>
                 </div>
 
                 <div>
                     <label for="password" class="block mb-1 text-sm font-medium text-zinc-200">Senha</label>
                     <input type="password" name="password" id="password" placeholder="Crie uma senha"
-                        class="bg-zinc-950 border border-default text-zinc-200 text-sm rounded-lg block w-full p-2.5"
+                        class="bg-zinc-950 border border-default text-zinc-200 text-sm rounded-lg block outline-none focus:ring-0 focus:border-brand w-full p-2.5"
                         required>
                 </div>
 

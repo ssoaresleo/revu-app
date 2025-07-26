@@ -5,12 +5,12 @@
 ])
 
 @php
-    $baseClasses = 'font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer transition';
+    $baseClasses =
+        'font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer transition outline-none focus:ring-0 focus:outline-none';
     $variants = [
-        'secondary' => 'border border-default text-body hover:bg-elevated focus:ring-2 focus:ring-zinc-700',
-        'primary' => 'bg-brand text-invert hover:bg-brand-dark focus:ring-2 focus:ring-brand-dark',
+        'secondary' => 'border border-default text-body hover:bg-elevated focus:border-transparent',
+        'primary' => 'bg-brand text-invert hover:bg-brand-dark focus:border-transparent',
     ];
-
     $variantKey = strtolower(trim($variant));
     $buttonClass = $variants[$variantKey] ?? $variants['secondary'];
 @endphp

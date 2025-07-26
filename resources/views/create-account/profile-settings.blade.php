@@ -34,14 +34,14 @@
                         <label for="username" class="block mb-1 text-sm font-medium text-zinc-200">Como deseja ser
                             chamado?</label>
                         <input type="text" name="username" id="username"
-                            class="bg-zinc-950 border border-default text-zinc-200 text-sm rounded-lg block w-full p-2.5"
+                            class="bg-zinc-950 border border-default text-zinc-200 text-sm rounded-lg block outline-none focus:ring-0 focus:border-brand w-full p-2.5"
                             placeholder="Insira seu username" required>
                     </div>
 
                     <div class="text-left mb-4">
                         <label for="username" class="block mb-1 text-sm font-medium text-zinc-200">Bio</label>
                         <textarea name="bio" id="bio" rows="3"
-                            class="bg-zinc-950 border border-default text-zinc-200 text-sm rounded-lg block w-full p-2.5"
+                            class="bg-zinc-950 border border-default text-zinc-200 text-sm rounded-lg block outline-none focus:ring-0 focus:border-brand w-full p-2.5"
                             placeholder="Conte um pouco sobre você..."></textarea>
                     </div>
 
