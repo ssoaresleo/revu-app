@@ -26,7 +26,7 @@
                 <x-button type="submit" variant='gradient' class="w-full">Criar nova conta</x-button>
 
                 <p class="text-sm text-center font-light text-zinc-400">
-                    Ainda não tem uma conta? <a href="{{ route('create-account') }}" class="underline text-zinc-300">Crie
+                    Ainda não tem uma conta? <a href="#" class="underline text-zinc-300">Crie
                         uma</a>
                 </p>
             </form>

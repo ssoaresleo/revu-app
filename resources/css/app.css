@@ -5,3 +5,18 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+
+@theme {
+    --color-base: #09090B;
+    --color-elevated: #141414;
+    --color-section:#1F1F1F;
+    --color-brand: #C58DE7;
+    --color-brand-dark: #B063DE;
+    --color-heading: #FAFAFA;
+    --color-body: #E1E1E6;
+    --color-span:#5E5E66;
+    --color-muted:#71717A;
+    --color-invert:#09090B;
+    --color-default:#27272A;
+    --color-strong:#FFFFFF;
+}

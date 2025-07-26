@@ -9,8 +9,6 @@
 </head>
 
 <body class="bg-base text-body">
-    @include('components.header')
-
     @yield('content')
 </body>
 
