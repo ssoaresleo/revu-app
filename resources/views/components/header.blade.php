@@ -5,8 +5,8 @@
                 <span class="self-center text-xl font-semibold whitespace-nowrap">Revuapp</span>
             </a>
                <div class="flex items-center lg:order-2">
-                   <x-button linkto="login" variant="default" class="mr-2">Entrar</x-button>
-                   <x-button linkto="create-account" variant="gradient" class="me-2 mb-2">Criar uma conta</x-button>
+                   <x-button variant="secoundary" class="mr-2">Entrar</x-button>
+                   <x-button class="me-2">Criar uma conta</x-button>
                </div>
            </div>
        </nav>
