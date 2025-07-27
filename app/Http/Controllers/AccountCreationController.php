@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Genre;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AccountCreationController extends Controller
 {
@@ -49,20 +51,36 @@ class AccountCreationController extends Controller
     public function handleProfileSettingsForm(Request $request)
     {
         $validated = $request->validate([
-            'profile_picture' => 'nullable|image|max:2048|mimes:png,jpg',
             'username' => 'required|string|max:255',
             'bio' => 'nullable|string|max:1000',
+            'profile_picture' => 'nullable|image|max:2048|mimes:png,jpg,jpeg',
         ]);
         $image_file = $request->file('profile_picture');
         if ($image_file) {
             $path = $image_file->store('uploads', 'public');
             $validated['profile_picture'] = $path;
         }
+
+        session(['form_data_profile' => $validated]);
+
         return redirect()->route('register.finalize');
     }
 
-    public function createUser(Request $request)
+    public function finalizeAccountCreation(Request $request, User $user)
     {
-        
+        $accountData = session('form_data_account', []);
+        $selectedGenres = session('form_data_genres', []);
+        $profileData = session('form_data_profile', []);
+
+        $userData = array_merge($accountData, $profileData);
+
+        $user = $user->fill($userData);
+        $user->password = Hash::make($userData['password']);
+        $user->save();
+
+        $user->genres()->sync($selectedGenres);
+
+        session()->forget(['form_data_account', 'form_data_profile', 'form_data_genres']);
+        return redirect()->route('register.success');
     }
 }

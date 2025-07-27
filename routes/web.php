@@ -1,12 +1,25 @@
 <?php
 
 use App\Http\Controllers\AccountCreationController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FeedController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+
+Route::middleware(['throttle:authenticate'])->group(function () {
+    Route::post('/login', [AuthController::class, 'authenticate'])->name('auth');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/feed', [FeedController::class, 'index'])->name('feed');
+});
+
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::prefix('register')->name('register.')->group(function () {
     Route::get('/', [AccountCreationController::class, 'showAccountForm'])->name('index');
@@ -18,7 +31,7 @@ Route::prefix('register')->name('register.')->group(function () {
     Route::get('profile-settings', [AccountCreationController::class, 'showProfileSettingsForm'])->name('profile-settings');
     Route::post('profile-settings', [AccountCreationController::class, 'handleProfileSettingsForm']);
 
-    Route::get('finalize', [AccountCreationController::class, 'handleProfileSettingsForm'])->name('finalize');
+    Route::get('finalize', [AccountCreationController::class, 'finalizeAccountCreation'])->name('finalize');
 
-    Route::get('complete', fn() => view('register.complete'))->name('profile-complete');
+    Route::get('success', fn() => view('register.success'))->name('success');
 });
