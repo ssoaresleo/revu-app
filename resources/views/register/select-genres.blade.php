@@ -3,21 +3,6 @@
 @section('content')
     @php
         $currentStep = 2;
-        $genres = [
-            ['id' => 1, 'name' => 'Ficção Científica', 'icon' => 'ficcao'],
-            ['id' => 2, 'name' => 'Romance', 'icon' => 'romance'],
-            ['id' => 3, 'name' => 'Fantasia', 'icon' => 'fantasia'],
-            ['id' => 4, 'name' => 'Terror', 'icon' => 'terror'],
-            ['id' => 5, 'name' => 'Suspense', 'icon' => 'suspense'],
-            ['id' => 6, 'name' => 'Biografia', 'icon' => 'biografia'],
-            ['id' => 7, 'name' => 'Drama', 'icon' => 'drama'],
-            ['id' => 8, 'name' => 'Autoajuda', 'icon' => 'autoajuda'],
-            ['id' => 9, 'name' => 'Mistério', 'icon' => 'misterio'],
-            ['id' => 10, 'name' => 'História', 'icon' => 'book'],
-            ['id' => 11, 'name' => 'Poesia', 'icon' => 'poesia'],
-            ['id' => 12, 'name' => 'Aventura', 'icon' => 'aventura'],
-        ];
-
     @endphp
 
     <section class="min-h-screen relative flex flex-col items-center px-4 pb-20">

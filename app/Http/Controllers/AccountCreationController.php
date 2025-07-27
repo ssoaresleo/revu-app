@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
 class AccountCreationController extends Controller
@@ -13,7 +14,8 @@ class AccountCreationController extends Controller
 
     public function showSelectGenresForm()
     {
-        return view('register.select-genres');
+        $genres = Genre::all();
+        return view('register.select-genres', compact('genres'));
     }
 
     public function showProfileSettingsForm()
@@ -56,6 +58,11 @@ class AccountCreationController extends Controller
             $path = $image_file->store('uploads', 'public');
             $validated['profile_picture'] = $path;
         }
-        return redirect()->route('register.profile-settings');
+        return redirect()->route('register.finalize');
+    }
+
+    public function createUser(Request $request)
+    {
+        
     }
 }
