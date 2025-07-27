@@ -1,33 +1,56 @@
-@extends('layouts.app')
+@extends('layouts.register')
 
 @section('content')
-    <section class="flex items-center justify-center">
-        <div class="flex items-start mt-8 justify-between w-full max-w-screen-xl">
-            <div>
-                <h1 class="text-3xl font-bold mb-4">Faça login</h1>
-                <p class="text-zinc-500">Acesse sua conta e continue participando das discussões sobre seus livros favoritos.</p>
+    @php
+        $hasLoginError = session()->has('status');
+    @endphp
+
+    <section class="min-h-screen relative flex flex-col items-center px-4 pb-20">
+        <div class="flex flex-col items-center justify-center flex-grow max-w-md w-full space-y-10">
+
+            <div class="text-center max-w-2xl flex flex-col items-center justify-center">
+                <img src="{{ asset('image/revuapp.svg') }}" alt="Ícone" class="mb-4">
+                <div>
+                    <h1 class="text-3xl text-heading font-bold mb-4">Bem-vindo de volta!</h1>
+                    <p class="text-span">
+                        Entre com sua conta para continuar explorando livros e discussões literárias.
+                    </p>
+                </div>
             </div>
 
-            <form method="POST" action="{{ route('login') }}"
-                class="space-y-4 md:space-y-6 w-full max-w-md bg-zinc-900 p-6 rounded-lg" action="#">
+
+            <form method="POST" action="{{ route('login') }}" class="space-y-4 md:space-y-6 w-full p-6 rounded-lg">
                 @csrf
+
+                @if ($hasLoginError)
+                    <div class="bg-red-950/25 border border-red-400 rounded-lg py-2.5 px-4 text-center">
+                        <span class="text-red-400">{{ session('status') }}</span>
+                    </div>
+                @endif
+
                 <div>
-                    <input type="email" name="email" id="email"
-                        class="bg-zinc-950 border border-zinc-800 text-zinc-200 text-sm rounded-lg focus:ring-zinc-600 focus:border-zinc-600 block w-full p-2.5"
-                        placeholder="Insira seu E-mail" required>
+                    <label for="email" class="block mb-1 text-sm font-medium text-zinc-200">E-mail</label>
+                    <input type="email" @class([
+                        'bg-zinc-950 text-zinc-200 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-0 focus:border-brand',
+                        'border border-default' => !$hasLoginError,
+                        'border border-red-400' => $hasLoginError,
+                    ]) name="email" value="{{ old('email') }}"
+                        placeholder="Insira seu E-mail">
                 </div>
 
                 <div>
-                    <input type="password" name="password" id="password" placeholder="Insira sua senha"
-                        class="bg-zinc-950 border border-zinc-800 text-zinc-200 text-sm rounded-lg focus:ring-zinc-600 focus:border-zinc-600 block w-full p-2.5"
-                        required>
+                    <label for="password" class="block mb-1 text-sm font-medium text-zinc-200">Senha</label>
+                    <input type="password" @class([
+                        'bg-zinc-950 text-zinc-200 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-0 focus:border-brand',
+                        'border border-default' => !$hasLoginError,
+                        'border border-red-400' => $hasLoginError,
+                    ]) name="password" placeholder="Insira sua senha">
                 </div>
 
-                <x-button type="submit" variant='gradient' class="w-full">Criar nova conta</x-button>
+                <x-button type="submit" variant="primary" class="w-full">Continuar</x-button>
 
-                <p class="text-sm text-center font-light text-zinc-400">
-                    Ainda não tem uma conta? <a href="#" class="underline text-zinc-300">Crie
-                        uma</a>
+                <p class="text-sm text-center font-light">
+                    Não tem uma conta? <a href="#" class="underline text-brand">Crie uma</a>
                 </p>
             </form>
         </div>
