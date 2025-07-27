@@ -10,4 +10,9 @@ class Genre extends Model
         'name',
         'icon',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

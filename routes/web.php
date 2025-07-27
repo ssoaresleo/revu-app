@@ -17,5 +17,8 @@ Route::prefix('register')->name('register.')->group(function () {
 
     Route::get('profile-settings', [AccountCreationController::class, 'showProfileSettingsForm'])->name('profile-settings');
     Route::post('profile-settings', [AccountCreationController::class, 'handleProfileSettingsForm']);
+
+    Route::get('finalize', [AccountCreationController::class, 'handleProfileSettingsForm'])->name('finalize');
+
     Route::get('complete', fn() => view('register.complete'))->name('profile-complete');
 });
