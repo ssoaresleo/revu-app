@@ -15,7 +15,7 @@ Route::prefix('register')->name('register.')->group(function () {
     Route::get('select-genres', [AccountCreationController::class, 'showSelectGenresForm'])->name('select-genres');
     Route::post('select-genres', [AccountCreationController::class, 'handleSelectGenresForm']);
 
-    Route::get('profile-settings', fn() => view('register.profile-settings'))->name('profile-settings');
-    Route::post('profile-settings', fn() => redirect()->route('register.profile-complete'));
+    Route::get('profile-settings', [AccountCreationController::class, 'showProfileSettingsForm'])->name('profile-settings');
+    Route::post('profile-settings', [AccountCreationController::class, 'handleProfileSettingsForm']);
     Route::get('complete', fn() => view('register.complete'))->name('profile-complete');
 });

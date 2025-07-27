@@ -16,6 +16,11 @@ class AccountCreationController extends Controller
         return view('register.select-genres');
     }
 
+    public function showProfileSettingsForm()
+    {
+        return view('register.profile-settings');
+    }
+
     public function handleAccountForm(Request $request)
     {
         $validated = $request->validate([
@@ -25,11 +30,32 @@ class AccountCreationController extends Controller
         ]);
 
         session(['form_data_account' => $validated]);
-
         return redirect()->route('register.select-genres');
     }
 
-    public function handleSelectGenresForm(Request $request) {
-        dd($request->all());
+    public function handleSelectGenresForm(Request $request)
+    {
+        $validated = $request->validate([
+            'genres' => 'required|array|min:1',
+            'genres.*' => 'integer',
+        ]);
+
+        session(['form_data_genres' => $validated['genres']]);
+        return redirect()->route('register.profile-settings');
+    }
+
+    public function handleProfileSettingsForm(Request $request)
+    {
+        $validated = $request->validate([
+            'profile_picture' => 'nullable|image|max:2048|mimes:png,jpg',
+            'username' => 'required|string|max:255',
+            'bio' => 'nullable|string|max:1000',
+        ]);
+        $image_file = $request->file('profile_picture');
+        if ($image_file) {
+            $path = $image_file->store('uploads', 'public');
+            $validated['profile_picture'] = $path;
+        }
+        return redirect()->route('register.profile-settings');
     }
 }

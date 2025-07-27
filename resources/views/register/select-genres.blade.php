@@ -43,7 +43,7 @@
                         @endforeach
                     </div>
 
-                    <div class="flex items-end w-full justify-end gap-4">
+                    <div class="flex items-end w-full justify-end gap-2">
                         <x-button type="submit" variant='secondary'>
                             Voltar
                         </x-button>
