@@ -2,5 +2,4 @@
     <span class="size-6">
         <x-gmdi-logout />
     </span>
-    <span class="text-lg">Sair</span>
 </a>

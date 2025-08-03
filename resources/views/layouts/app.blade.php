@@ -8,8 +8,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-base text-body">
-    <main class="min-h-screen flex justify-center mx-auto max-w-7xl">
+<body class="bg-base text-body h-screen overflow-hidden">
+    <x-header />
+    <main class="pt-18 h-screen flex justify-center mx-auto max-w-7xl overflow-hidden">
         <x-feed.sidebar />
         @yield('content')
         <x-feed.trending-panel />

@@ -1,4 +1,4 @@
- <div class="bg-elevated rounded-lg">
+ <div class="bg-elevated rounded-3xl border border-default">
      <h2 class="text-lg font-semibold mb-3 p-6">Quem seguir</h2>
      <div class="flex flex-col gap-4 pt-0 p-6">
          <div class="flex items-center">
@@ -12,7 +12,7 @@
                  <span class="text-heading block truncate max-w-[160px]">
                      Alexandre Alves Martins
                  </span>
-                 <div class="text-sm truncate text-muted max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap">
+                 <div class="text-sm truncate text-span max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap">
                      alex_martins
                  </div>
              </div>
@@ -32,7 +32,7 @@
                  <span class="text-heading block truncate max-w-[160px]">
                      Pietro Henrique Silva
                  </span>
-                 <div class="text-sm truncate text-muted max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap">
+                 <div class="text-sm truncate text-span max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap">
                      pietr_silva
                  </div>
              </div>

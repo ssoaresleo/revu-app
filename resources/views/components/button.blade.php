@@ -16,7 +16,7 @@
     ];
     $variants = [
         'secondary' => 'border border-default text-body hover:bg-elevated focus:border-transparent',
-        'primary' => 'bg-brand text-invert hover:bg-brand-dark focus:border-transparent',
+        'primary' => 'bg-brand text-invert hover:bg-brand-light focus:border-transparent',
     ];
 
     $sizeClass = $sizes[strtolower($size)] ?? $sizes['md'];

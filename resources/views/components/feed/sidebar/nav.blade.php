@@ -1,4 +1,4 @@
-  <nav class="mt-11">
+  <nav class="mt-6">
       <x-feed.sidebar.nav-item href="{{ route('feed') }}" label="Início">
           <x-heroicon-s-home />
       </x-feed.sidebar.nav-item>
