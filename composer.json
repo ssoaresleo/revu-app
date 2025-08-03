@@ -15,10 +15,12 @@
         "blade-ui-kit/blade-icons": "^1.8",
         "codeat3/blade-google-material-design-icons": "^1.20",
         "davidhsianturi/blade-bootstrap-icons": "^2.1",
+        "khatabwedaa/blade-css-icons": "^1.5",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "mallardduck/blade-boxicons": "^2.4",
-        "mallardduck/blade-lucide-icons": "^1.23"
+        "mallardduck/blade-lucide-icons": "^1.23",
+        "owenvoke/blade-fontawesome": "^2.9"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
