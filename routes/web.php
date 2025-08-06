@@ -17,9 +17,15 @@ Route::middleware(['throttle:authenticate'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/feed', [FeedController::class, 'index'])->name('feed');
+    Route::post('/feed/status', [FeedController::class, 'storeStatus'])->name('feed.status.store');
+    Route::patch('/feed/status/{id}', [FeedController::class, 'updateStatus'])->name('feed.status');
 });
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
 
 Route::prefix('register')->name('register.')->group(function () {
     Route::get('/', [AccountCreationController::class, 'showAccountForm'])->name('index');

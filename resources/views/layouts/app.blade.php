@@ -8,14 +8,13 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-base text-body h-screen overflow-hidden">
+<body class="bg-base text-body min-h-screen">
     <x-header />
-    <main class="pt-18 h-screen flex justify-center mx-auto max-w-7xl overflow-hidden">
+    <main class="pt-16 flex justify-center mx-auto max-w-7xl">
         <x-feed.sidebar />
         @yield('content')
         <x-feed.trending-panel />
     </main>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
-
 </html>

@@ -24,7 +24,7 @@
                 <div>
                     <label for="name" class="block mb-1 text-sm font-medium text-zinc-200">Nome</label>
                     <input type="text" @class([
-                        'bg-zinc-950 text-zinc-200 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-0 focus:border-brand',
+                        'bg-elevated text-zinc-200 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-0 focus:border-brand',
                         'border border-default' => !$errors->has('name'),
                         'border border-red-400' => $errors->has('name'),
                     ]) name="name" value="{{ old('name') }}"
@@ -37,7 +37,7 @@
                 <div>
                     <label for="email" class="block mb-1 text-sm font-medium text-zinc-200">E-mail</label>
                     <input type="email" @class([
-                        'bg-zinc-950 text-zinc-200 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-0 focus:border-brand',
+                        'bg-elevated text-zinc-200 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-0 focus:border-brand',
                         'border border-default' => !$errors->has('name'),
                         'border border-red-400' => $errors->has('name'),
                     ]) name="email" value="{{ old('email') }}"
@@ -50,7 +50,7 @@
                 <div>
                     <label for="password" class="block mb-1 text-sm font-medium text-zinc-200">Senha</label>
                     <input type="password" @class([
-                        'bg-zinc-950 text-zinc-200 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-0 focus:border-brand',
+                        'bg-elevated text-zinc-200 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-0 focus:border-brand',
                         'border border-default' => !$errors->has('name'),
                         'border border-red-400' => $errors->has('name'),
                     ]) name="password" placeholder="Crie uma senha"

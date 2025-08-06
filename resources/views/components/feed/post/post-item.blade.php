@@ -1,8 +1,7 @@
 <div class="flex gap-2 p-6 border border-default bg-elevated mb-4 rounded-3xl">
     <div>
         <a href="#">
-            <img src="{{ asset('storage/' . $post->user->profile_picture) }}" alt="User Avatar"
-                class="size-10 rounded-full">
+            <x-user-avatar :user="$post->user" />
         </a>
     </div>
     <div class="flex-1">
@@ -31,11 +30,16 @@
             </div>
             <div class="flex-1">
                 <div class="inline-flex items-center gap-2 cursor-pointer">
-                    <x-far-comment class="size-6" />
-                    <div class="">{{ $post->likesCount() }}</div>
+                    <x-heroicon-o-arrow-path class="size-6" />
+                    <div class="">{{ $post->reposts()->count() }}</div>
                 </div>
             </div>
-            <div class="flex-1"></div>
+            <div class="flex-1">
+                <div class="inline-flex items-center gap-2 cursor-pointer">
+                    <x-heroicon-o-heart class="size-6" />
+                    <div class="">{{ $post->likes()->count() }}</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -2,4 +2,5 @@
     <span class="size-6">
         <x-gmdi-logout />
     </span>
+    <span>Sair</span>
 </a>

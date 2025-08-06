@@ -1,5 +1,5 @@
 <div class="bg-elevated rounded-3xl border border-default">
-    <h2 class="text-lg font-semibold mb-3 p-6">Discussões em Alta</h2>
+    <h2 class="text-lg font-semibold mb-3 p-6">Livros em Alta</h2>
     <div class="flex flex-col gap-4 pt-0 p-6">
         <a href="#" class="group/item">
             <div class="group-hover/item:underline font-bold">"A Revolução dos Bichos"</div>

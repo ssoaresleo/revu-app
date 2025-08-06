@@ -1,4 +1,4 @@
-@extends('layouts.register')
+@extends('layouts.auth')
 
 @section('content')
     @php
@@ -31,7 +31,7 @@
                 <div>
                     <label for="email" class="block mb-1 text-sm font-medium text-zinc-200">E-mail</label>
                     <input type="email" @class([
-                        'bg-zinc-950 text-zinc-200 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-0 focus:border-brand',
+                        'bg-elevated text-zinc-200 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-0 focus:border-brand',
                         'border border-default' => !$hasLoginError,
                         'border border-red-400' => $hasLoginError,
                     ]) name="email" value="{{ old('email') }}"
@@ -41,7 +41,7 @@
                 <div>
                     <label for="password" class="block mb-1 text-sm font-medium text-zinc-200">Senha</label>
                     <input type="password" @class([
-                        'bg-zinc-950 text-zinc-200 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-0 focus:border-brand',
+                        'bg-elevated text-zinc-200 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-0 focus:border-brand',
                         'border border-default' => !$hasLoginError,
                         'border border-red-400' => $hasLoginError,
                     ]) name="password" placeholder="Insira sua senha">

@@ -70,4 +70,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Like::class);
     }
+
+    public function userReadings()
+    {
+        return $this->hasMany(UserReading::class);
+    }
 }

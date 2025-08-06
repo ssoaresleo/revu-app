@@ -29,4 +29,14 @@ class Post extends Model
     {
         return $this->likes()->count();
     }
+
+    public function originalPost()
+    {
+        return $this->belongsTo(Post::class, 'repost_of_id');
+    }
+
+    public function reposts()
+    {
+        return $this->hasMany(Post::class, 'repost_of_id');
+    }
 }

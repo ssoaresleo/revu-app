@@ -1,1 +1,1 @@
- <img src="{{ asset('storage/' . auth()->user()->profile_picture) }}" alt="{{ auth()->user()->name }}">
+<img src="{{ asset('storage/' . $user->profile_picture) }}" alt="{{ $user->name }}">

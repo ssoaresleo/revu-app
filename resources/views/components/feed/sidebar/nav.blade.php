@@ -5,7 +5,7 @@
       <x-feed.sidebar.nav-item href="{{ route('login') }}" label="Buscar">
           <x-bi-search />
       </x-feed.sidebar.nav-item>
-      <x-feed.sidebar.nav-item href="{{ route('login') }}" label="Meu perfil">
+      <x-feed.sidebar.nav-item href="{{ route('profile') }}" label="Meu perfil">
           <x-heroicon-s-user />
       </x-feed.sidebar.nav-item>
       <x-feed.sidebar.nav-item href="{{ route('login') }}" label="Minhas postagens">
